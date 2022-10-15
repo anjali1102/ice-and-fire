@@ -8,23 +8,35 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchBooks());
-  }, [dispatch]);
+  }, []);
 
-  if (loading) return <h3>Loading Books...</h3>;
-  if (hasErrors) return <h3>Cannot display Books...</h3>;
+  if (loading)
+    return (
+      <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-white">
+        Loading Books ⏳
+      </h1>
+    );
+  if (hasErrors)
+    return (
+      <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-white">
+        Cannot display Books...
+      </h1>
+    );
   //     "https://www.anapioficeandfire.com/api/books?pageSize=30"
 
   console.log(books);
   return (
     <div className="App">
-      <h1>Game of Thrones Books</h1>
+      <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-white">
+        Game of Thrones Books
+      </h1>
       <div className="books">
         {books?.map((book, index) => {
           const cleanedDate = new Date(book.released).toDateString();
           const authors = book.authors.join(", ");
           return (
             <div
-              class="max-w-sm rounded overflow-hidden white-lg bg-pink-400 hover:bg-pink-500 text-white font-bold"
+              class="max-w-sm rounded overflow-hidden white-lg bg-lime-400 rounded drop-shadow-lg  text-white font-bold"
               key={index}
             >
               <h1 class="w-full">Book {index + 1}</h1>

@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const initialState = {
-  house: [],
+  houses: [],
   hasErrors: false,
   loading: false,
 };
@@ -20,7 +20,7 @@ const houseSlice = createSlice({
         if (action.payload) {
           state.loading = false;
           state.hasErrors = false;
-          state.house = action.payload.house;
+          state.houses = action.payload;
         }
       })
       .addCase(fetchHouses.rejected, (state, action) => {
@@ -41,6 +41,7 @@ export const fetchHouses = createAsyncThunk(
       const response = await axios.get(
         `https://anapioficeandfire.com/api/houses/`
       );
+      console.log(response.data);
       return response.data;
     } catch (error) {
       return ThunkAPI.rejectWithValue(error);
