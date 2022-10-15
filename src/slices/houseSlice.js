@@ -41,7 +41,6 @@ export const fetchHouses = createAsyncThunk(
       const response = await axios.get(
         `https://anapioficeandfire.com/api/houses/`
       );
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return ThunkAPI.rejectWithValue(error);

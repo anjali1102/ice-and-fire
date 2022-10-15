@@ -22,9 +22,7 @@ const Home = () => {
         Cannot display Books...
       </h1>
     );
-  //     "https://www.anapioficeandfire.com/api/books?pageSize=30"
 
-  console.log(books);
   return (
     <div className="p-4">
       <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-white ">

@@ -40,7 +40,6 @@ export const fetchBooks = createAsyncThunk(
       const response = await axios.get(
         `https://www.anapioficeandfire.com/api/books?pageSize=30`
       );
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return ThunkAPI.rejectWithValue(error);

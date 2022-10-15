@@ -23,7 +23,6 @@ const House = () => {
       </h1>
     );
 
-  console.log(houses);
   return (
     <div className="p-4">
       <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-white ">
