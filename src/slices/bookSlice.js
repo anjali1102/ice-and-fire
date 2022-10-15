@@ -6,7 +6,6 @@ export const initialState = {
   hasErrors: false,
   books: [],
 };
-
 const bookSlice = createSlice({
   name: "books",
   initialState,
@@ -20,7 +19,7 @@ const bookSlice = createSlice({
         if (action.payload) {
           state.loading = false;
           state.hasErrors = false;
-          state.books = action.payload.books;
+          state.books = action.payload;
         }
       })
       .addCase(fetchBooks.rejected, (state, action) => {

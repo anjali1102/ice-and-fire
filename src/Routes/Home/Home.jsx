@@ -14,17 +14,14 @@ const Home = () => {
   if (hasErrors) return <h3>Cannot display Books...</h3>;
   //     "https://www.anapioficeandfire.com/api/books?pageSize=30"
 
+  console.log(books);
   return (
     <div className="App">
       <h1>Game of Thrones Books</h1>
-
       <div className="books">
-        {/* {console.log("books", books)} */}
         {books?.map((book, index) => {
-          console.log("books", book);
           const cleanedDate = new Date(book.released).toDateString();
           const authors = book.authors.join(", ");
-
           return (
             <div
               class="max-w-sm rounded overflow-hidden white-lg bg-pink-400 hover:bg-pink-500 text-white font-bold"
